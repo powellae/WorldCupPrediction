@@ -1,0 +1,49 @@
+Game,Group,Home,Away
+1,A,Brazil,Croatia
+2,A,Mexico,Cameroon
+3,B,Spain,Netherlands
+4,B,Chile,Australia
+5,C,Colombia,Greece
+6,D,Uruguay,Costa Rica
+7,D,England,Italy
+8,C,C™te D'Ivoire,Japan
+9,E,Switzerland ,Ecuador
+10,E,France,Honduras
+11,F,Argentina,Bosnia and Herzegovina
+12,G,Germany,Portugal
+13,F,Iran,Nigeria
+14,G,Ghana,United States
+15,H,Belgium,Algeria
+16,A,Brazil,Mexico
+17,H,Russia,Korea Republic
+18,B,Australia,Netherlands
+19,B,Spain,Chile
+20,A,Cameroon,Croatia
+21,C,Colombia,C™te D'Ivoire
+22,D,Uruguay,England
+23,C,Japan,Greece
+24,D,Italy,Costa Rica
+25,E,Switzerland ,France
+26,E,Honduras,Ecuador
+27,F,Argentina,Iran
+28,G,Germany,Ghana
+29,F,Nigeria,Bosnia and Herzegovina
+30,H,Belgium,Russia
+31,H,Korea Republic,Algeria
+32,G,United States,Portugal
+33,B,Australia,Spain
+34,B,Netherlands,Chile
+35,A,Cameroon,Brazil
+36,A,Croatia,Mexico
+37,D,Italy,Uruguay
+38,D,Costa Rica,England
+39,C,Japan,Colombia
+40,C,Greece,C™te D'Ivoire
+41,F,Nigeria,Argentina
+42,F,Bosnia and Herzegovina,Iran
+43,E,Honduras,Switzerland
+44,E,Ecuador,France
+45,G,United States,Germany
+46,G,Portugal,Ghana
+47,H,Korea Republic,Belgium
+48,H,Algeria,Russia

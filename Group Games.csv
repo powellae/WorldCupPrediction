@@ -1,0 +1,49 @@
+Game,Group,Home,Away
+1,A,Russia,Saudi Arabia
+2,A,Egypt,Uruguay
+3,B,Morocco,Iran
+4,B,Portugal,Spain
+5,C,France,Australia
+6,D,Argentina,Iceland
+7,C,Peru,Denmark
+8,D,Croatia,Nigeria
+9,E,Costa Rica,Serbia
+10,F,Germany,Mexico
+11,E,Brazil,Switzerland
+12,F,Sweden,Korea Republic
+13,G,Belgium,Panama
+14,G,Tunisia,England
+15,H,Colombia,Japan
+16,H,Poland,Senegal
+17,A,Russia,Egypt
+18,B,Portugal,Morocco
+19,A,Uruguay,Saudi Arabia
+20,B,Iran,Spain
+21,C,Denmark,Australia
+22,C,France,Peru
+23,D,Argentina,Croatia
+24,E,Brazil,Costa Rica 
+25,D,Nigeria,Iceland
+26,E,Serbia,Switzerland
+27,G,Belgium,Tunisia
+28,F,Korea Republic,Mexico
+29,F,Germany,Sweden
+30,G,England,Panama
+31,H,Japan,Senegal
+32,H,Poland,Colombia
+33,A,Uruguay,Russia
+34,A,Saudi Arabia,Egypt
+35,B,Spain,Morocco
+36,B,Iran,Portugal
+37,C,Australia,Peru
+38,C,Denmark,France
+39,D,Nigeria,Argentina
+40,D,Iceland,Croatia
+41,F,Korea Republic,Germany
+42,F,Mexico,Sweden
+43,E,Serbia,Brazil
+44,E,Switzerland,Costa Rica 
+45,H,Japan,Poland
+46,H,Senegal,Colombia
+47,G,Panama,Tunisia
+48,G,England,Belgium
