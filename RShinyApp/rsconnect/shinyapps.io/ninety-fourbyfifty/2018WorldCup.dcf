@@ -1,0 +1,12 @@
+name: 2018WorldCup
+title: 2018WorldCup
+username:
+account: ninety-fourbyfifty
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 360026
+bundleId: 1426230
+url: https://ninety-fourbyfifty.shinyapps.io/2018WorldCup/
+when: 1528845860.95844
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,5 +1,6 @@
-
-WC2018<-read.csv("./data/WC2018.csv")
+library(ggplot2)
+library(DT)
+WC2018<-read.csv("WC2018.csv")
 #WC2018 <- read.csv("~/Documents/Sports Analytics/WorldCup/WorldCup2018/data/WC2018.csv")
 WC2018 <- WC2018[,2:8]
 j <- WC2018[with(WC2018, order(-Winner)),]
@@ -16,7 +17,7 @@ function(input, output) {
   
   # display 10 rows initially
   output$ex1 <- DT::renderDataTable(
-    DT::datatable(head(WC2018,34), options = list((pageLength = 32), list(visable=FALSE, targets=c(1)) ,initComplete = JS(
+    DT::datatable(head(WC2018,34), rownames = FALSE, options = list((pageLength = 32), list(visable=FALSE, targets=c(1)) ,initComplete = JS(
       "function(settings, json) {",
       "$(this.api().table().header()).css({'background-color': '#8B0000', 'color': '#fff'});",
       "}")
