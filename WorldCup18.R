@@ -455,18 +455,3 @@ Simulate.WC <- function(sim){
 
 WC2018 <- Simulate.WC(1000)
 
-##To Do
-#1. Debug Weighting() to weight for all teams. 
-  #Fix "League" --. African Nations Cup
-  #Add FIFA Qualifying (different that WC)
-#2. Finish function for simulating group play matches
-#3. Write functionality for determining winners of each group stage (and 2nd place)
-  #a) Points
-  #b) Goal Differential
-  #c) Goals Scored
-  #d) Head to Head
-  #e) Coin Flip
-#4. Round of 16, Quaterfinal, Semifinal, and final simulation
-#5. Generate table to update as team advances with success
-#6. Ability to bind (5) with each simulation
-#7. Integrate into R Shiny App

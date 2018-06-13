@@ -5,8 +5,8 @@ account: ninety-fourbyfifty
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 360026
-bundleId: 1426230
+bundleId: 1426252
 url: https://ninety-fourbyfifty.shinyapps.io/2018WorldCup/
-when: 1528845860.95844
+when: 1528846769.00634
 asMultiple: FALSE
 asStatic: FALSE
