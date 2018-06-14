@@ -1,6 +1,6 @@
 #World Cup 2018 Prediction
 #Alexander Powell & Delaney Ambrosen
-#April 26, 2018
+#June 13, 2018
 #
 #
 
@@ -10,7 +10,7 @@ library(dplyr)
 library(boot)
 
 #Data
-soccer.db <- read.csv("Documents/Analytics/WorldCup18/soccer_db.csv", stringsAsFactors = FALSE)
+soccer.db <- read.csv("soccer_db2.csv", stringsAsFactors = FALSE)
 
 #Cleaning Data
 soccer.db$Home <- gsub("\\ - .*", "", soccer.db$Match)
@@ -259,8 +259,21 @@ for(i in 1:nrow(soccer.db2)){
 
 
 
-Simulate.WC <- function(sim){
-  GS <- read.csv("Documents/Analytics/WorldCup18/GroupStage18.csv")
+Simulate.WC <- function(sim, Game.Numb){
+  GS <- read.csv("GroupStage18.csv")
+  #Adding Results as Tournament Progresses
+  GS$H.Score <- NA
+  GS$A.Score <- NA
+  GS$H.Points <- NA
+  GS$A.Points <- NA
+  #Game #1 Russia vs. Saudi Arabia
+  GS$H.Score[1] <- 5
+  GS$A.Score[1] <- 0
+  for(k in 1:(Game.Numb-1)){
+    GS$H.Points[k] <- ifelse(GS$H.Score[k] > GS$A.Score[k], 3, ifelse(GS$H.Score[k] < GS$A.Score[k], 0, 1))
+    GS$A.Points[k] <- ifelse(GS$H.Points[k] == 3, 0, ifelse(GS$H.Points[k] == 0, 3, 1))
+  }
+  
   #Building results table
   Table1 <- GS %>%
     dplyr::select(Home, Group)
@@ -283,11 +296,9 @@ Simulate.WC <- function(sim){
     
     #Group Stage Data
     GroupStage <- GS
-    GroupStage$H.Score <- NA
-    GroupStage$A.Score <- NA
     
     #Simulate Group Stage
-    for(i in 1:nrow(GroupStage)){
+    for(i in Game.Numb:nrow(GroupStage)){
       Game <- Simulate.Game(GroupStage$Home[i], GroupStage$Away[i], temp)
       GroupStage$H.Score[i] <- Game[1]
       GroupStage$A.Score[i] <- Game[2]
@@ -440,7 +451,7 @@ Simulate.WC <- function(sim){
         }
         if(winner == Table$Team[j]){
           Table$Winner[j] <- Table$Winner[j] + 1
-          print(winner)
+          print(paste0(winner, ": ", Table$Winner[j]))
         }
       }
     }
@@ -453,5 +464,28 @@ Simulate.WC <- function(sim){
   return(Table)
 }
 
-WC2018 <- Simulate.WC(1000)
+WC2018 <- Simulate.WC(1000, 2)
 
+#Predicting one game
+TeamOne <- "Russia"
+TeamTwo <- "Saudi Arabia"
+sim <- 10000
+
+temp <- soccer.db %>%
+  dplyr::select(Home, Away, Tournament, H.Score, A.Score, Year)
+
+df <- data.frame(ID=1:sim)
+for(i in 1:nrow(df)){
+  x <- Simulate.Game(TeamOne, TeamTwo, temp)
+  df$home[i] <- x[1]
+  df$away[i] <- x[2]
+}
+
+df$home.win <- ifelse(df$home > df$away, 1, 0)
+df$away.win <- ifelse(df$away > df$home, 1, 0)
+Team1 <- sum(df$home.win)/sim
+Team2 <- sum(df$away.win)/sim
+Draw <- 1 - Team1 - Team2
+Team1
+Team2
+Draw
