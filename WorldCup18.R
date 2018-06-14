@@ -289,7 +289,7 @@ Simulate.WC <- function(sim, Game.Numb){
     dplyr::mutate(RD16 = 0, QF = 0, SF = 0, Finals = 0, Winner = 0) %>% 
     unique()
   for(k in 1:sim){
-    print(k)
+    #print(k)
     #Temporary version of soccer.db to run simulations hot
     temp <- soccer.db %>%
       dplyr::select(Home, Away, Tournament, H.Score, A.Score, Year)
@@ -451,10 +451,17 @@ Simulate.WC <- function(sim, Game.Numb){
         }
         if(winner == Table$Team[j]){
           Table$Winner[j] <- Table$Winner[j] + 1
-          print(paste0(winner, ": ", Table$Winner[j]))
+          #print(paste0(winner, ": ", Table$Winner[j]))
         }
       }
     }
+    report.value <- c(10,seq(50,1000, by = 50))
+    if(k %in% report.value){
+      Table.test <- Table[order(-Table$Winner),]
+      print(k)
+      print(Table.test)
+    }
+    
   }
   Table$RD16 <- 100*(Table$RD16 / sim)
   Table$QF <- 100*(Table$QF / sim)
@@ -465,7 +472,7 @@ Simulate.WC <- function(sim, Game.Numb){
 }
 
 WC2018 <- Simulate.WC(1000, 2)
-
+write.csv(WC2018, "WC2018.csv")
 #Predicting one game
 TeamOne <- "Russia"
 TeamTwo <- "Saudi Arabia"
