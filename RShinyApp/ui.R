@@ -24,10 +24,11 @@ shinyUI(
   
 
     headerPanel(
-      list(HTML('<img src="Worldcup.png" width="150" height="150"/>'), "2018 FIFA World Cup Predictions"),
+      list(HTML('<img src="WorldCup.png" width="150" height="150"/>'), "2018 FIFA World Cup Predictions"),
       windowTitle="2018 FIFA World Cup Predictions"
     ),
     mainPanel(
+      tags$p("Last Updated Thursday June 16th at 7:43pm EST"), tags$p("Read here for more ", tags$a(href="https://medium.com/ninety-four-by-fifty", "World Cup"), " coverage."),
       tabsetPanel(
         tabPanel("Table", DT::dataTableOutput('ex1')), 
         tabPanel("Methods", p(), p("Our 2018 World Cup Prediction is built from a database of all international competitions dating back to the 1870s

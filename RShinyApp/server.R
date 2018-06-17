@@ -17,7 +17,7 @@ function(input, output) {
   
   # display 10 rows initially
   output$ex1 <- DT::renderDataTable(
-    DT::datatable(head(WC2018,34), rownames = FALSE, options = list((pageLength = 32), list(visable=FALSE, targets=c(1)) ,initComplete = JS(
+    DT::datatable(WC2018[order(-WC2018$Winner),], rownames = FALSE, options = list(lengthMenu = c(2,4,8,16,32), pageLength = 32, visable=FALSE, targets=c(1) ,initComplete = JS(
       "function(settings, json) {",
       "$(this.api().table().header()).css({'background-color': '#8B0000', 'color': '#fff'});",
       "}")

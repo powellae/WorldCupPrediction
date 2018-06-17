@@ -269,6 +269,27 @@ Simulate.WC <- function(sim, Game.Numb){
   #Game #1 Russia vs. Saudi Arabia
   GS$H.Score[1] <- 5
   GS$A.Score[1] <- 0
+  #Game #2 Egypt vs. Uruguay
+  GS$H.Score[2] <- 0
+  GS$A.Score[2] <- 1
+  #Game #3 Morocco vs. Iran
+  GS$H.Score[3] <- 0
+  GS$A.Score[3] <- 1
+  #Game #4 Portugal vs. Spain
+  GS$H.Score[4] <- 3
+  GS$A.Score[4] <- 3
+  #Game #5 France vs. Australia
+  GS$H.Score[5] <- 2
+  GS$A.Score[5] <- 1
+  #Game #6 Argentina vs. Iceland
+  GS$H.Score[6] <- 1
+  GS$A.Score[6] <- 1
+  #Game #7 Peru vs. Denmark
+  GS$H.Score[7] <- 0
+  GS$A.Score[7] <- 1
+  #Game #8 Croatia vs. Nigeria
+  GS$H.Score[8] <- 2
+  GS$A.Score[8] <- 0
   for(k in 1:(Game.Numb-1)){
     GS$H.Points[k] <- ifelse(GS$H.Score[k] > GS$A.Score[k], 3, ifelse(GS$H.Score[k] < GS$A.Score[k], 0, 1))
     GS$A.Points[k] <- ifelse(GS$H.Points[k] == 3, 0, ifelse(GS$H.Points[k] == 0, 3, 1))
@@ -471,11 +492,11 @@ Simulate.WC <- function(sim, Game.Numb){
   return(Table)
 }
 
-WC2018 <- Simulate.WC(1000, 2)
-write.csv(WC2018, "WC2018.csv")
+WC2018 <- Simulate.WC(1000, 9)
+write.csv(WC2018, "RShinyApp/WC2018.csv")
 #Predicting one game
-TeamOne <- "Russia"
-TeamTwo <- "Saudi Arabia"
+TeamOne <- "Peru"
+TeamTwo <- "Denmark"
 sim <- 10000
 
 temp <- soccer.db %>%
@@ -496,3 +517,4 @@ Draw <- 1 - Team1 - Team2
 Team1
 Team2
 Draw
+  Q12A
